@@ -54,7 +54,7 @@
                         <a class="nav-link" href="<?= BASEURL . 'tamu'; ?>">Buku Tamu</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="admin.php">Admin</a>
+                        <a class="nav-link" href="<?= BASEURL . 'admin'; ?>">Admin</a>
                     </li>
                 </ul>
 

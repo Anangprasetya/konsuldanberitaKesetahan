@@ -18,4 +18,20 @@ class Tamu extends Controller
         $this->view('tamu/index', $data);
         $this->view('partials/footer');
     }
+
+    public function proses_tambah()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $r = $this->tamuModel->insert($_POST);
+            if ($r) {
+                echo "<script> alert('Sukses menambah pengunjung'); </script>";
+                header('location: ' . BASEURL . 'tamu');
+            } else {
+                echo "<script> alert('Gagal menambah pengunjung'); </script>";
+                header('location: ' . BASEURL . 'tamu');
+            }
+        } else {
+            header('location: ' . BASEURL . 'tamu');
+        }
+    }
 }

@@ -71,15 +71,15 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="aksi_tambah_pengunjung.php" method="post">
+                <form action="<?= BASEURL . 'tamu/proses_tambah'; ?>" method="post">
                     <fieldset>
                         <div class="form-group">
                             <label for="username">Nama</label>
-                            <input type="text" class="form-control" id="username" placeholder="nama" name="nama">
+                            <input type="text" class="form-control" require id="username" placeholder="nama" name="nama">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Alamat</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Alamat" name="alamat">
+                            <input type="text" class="form-control" require id="exampleInputPassword1" placeholder="Alamat" name="alamat">
 
                         </div>
                     </fieldset>

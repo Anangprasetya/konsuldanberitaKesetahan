@@ -23,4 +23,23 @@ class TamuModel
             return null;
         }
     }
+
+    public function insert($var)
+    {
+        $nama = $var['nama'];
+        $alamat = $var['alamat'];
+        $datenow = date('Y-m-d H:i:s');
+
+
+        $statement = "INSERT INTO $this->table values (null,'" . $nama . "','" . $alamat . "','" . $datenow . "')";
+
+        $this->db->query($statement);
+        $x = $this->db->execute();
+
+        if ($x) {
+            return true;
+        }
+
+        return false;
+    }
 }
