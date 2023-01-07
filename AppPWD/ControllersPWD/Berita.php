@@ -1,7 +1,7 @@
 <?php
 
 
-class HomeController extends Controller
+class Berita extends Controller
 {
     private $beritaModel;
 
@@ -15,14 +15,16 @@ class HomeController extends Controller
         $data["berita"] = $this->beritaModel->getAll();
 
         $this->view('partials/head');
-        $this->view('index', $data);
+        $this->view('berita/index', $data);
         $this->view('partials/footer');
     }
 
-    public function about()
+    public function detail($slug_berita)
     {
+        $data["berita"] = $this->beritaModel->getFind($slug_berita);
+
         $this->view('partials/head');
-        $this->view('profile');
+        $this->view('berita/detail', $data);
         $this->view('partials/footer');
     }
 }
