@@ -1,0 +1,9 @@
+.jumbotron {
+  background-image: url('assets/img/header.jpg');
+  background-size: cover;
+  width: 100%;
+  color: white;
+}
+.space {
+  margin-top: 20px;
+}

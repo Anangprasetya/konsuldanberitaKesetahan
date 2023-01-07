@@ -3,7 +3,7 @@
 // ======================
 // HOST APP
 // ======================
-$url_hostapp = "http://localhost/pwdTugas/konsulKesehatan/";
+$url_hostapp = "http://localhost/pwdTugas/responsi/";
 
 
 
@@ -32,17 +32,17 @@ define('BASEURL', $url_hostapp . 'public/');
 	define('DB_NAME', 'mydatabase');
 
 */
-define('DB_HOST', '');
-define('DB_USER', '');
-define('DB_PASS', '');
-define('DB_NAME', '');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'admin');
+define('DB_PASS', 'password');
+define('DB_NAME', 'pwdrescpba_Latihan-Website-Pure-PHP');
 
 
 
 // ======================
 // URL STATIC FILE
 // ======================
-define('static', $url_hostapp . 'ResourcesPWD/');
+define('static_file', $url_hostapp . 'ResourcesPWD/');
 
 
 

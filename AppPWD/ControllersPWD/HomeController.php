@@ -5,6 +5,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        echo "Hello World";
+        $this->view('partials/head');
+        $this->view('index');
+        $this->view('partials/footer');
     }
 }
