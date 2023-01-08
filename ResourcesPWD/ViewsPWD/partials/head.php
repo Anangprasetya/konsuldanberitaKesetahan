@@ -62,7 +62,12 @@
                     <p class="my-2 my-sm-0 text-white">Selamat datang, <?php echo $_SESSION['username']; ?></p>
                     <p class="my-2 my-sm-0 text-black"> ..... </p>
 
-                    <a class="btn btn-secondary my-2 my-sm-0" href="logout.php">Logout</a>
+
+                    <form action="<?= BASEURL . 'auth/proses_logout'; ?>" method="post">
+                        <button type="submit" class="btn btn-secondary my-2 my-sm-0">
+                            Logout
+                        </button>
+                    </form>
                 <?php } else { ?>
                     <button type="button" class="btn btn-secondary my-2 my-sm-0" data-toggle="modal" data-target="#myModal">Login</button>
                 <?php } ?>
@@ -81,7 +86,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="aksi_login.php" method="post">
+                            <form action="<?= BASEURL . 'auth/proses_login' ?>" method="post">
                                 <fieldset>
                                     <div class="form-group">
                                         <label for="username">Username</label>
