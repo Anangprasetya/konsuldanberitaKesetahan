@@ -28,14 +28,20 @@ class HomeController extends Controller
 
     public function search()
     {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-        $data = [
-            "berita" => $this->beritaModel->search($_POST),
-            "key" => $_POST["key"]
-        ];
 
-        $this->view('partials/head');
-        $this->view('berita/cari', $data);
-        $this->view('partials/footer');
+            $data = [
+                "berita" => $this->beritaModel->search($_POST),
+                "key" => $_POST["key"]
+            ];
+
+            $this->view('partials/head');
+            $this->view('berita/cari', $data);
+            $this->view('partials/footer');
+        } else {
+
+            header('location: ' . BASEURL . 'berita');
+        }
     }
 }

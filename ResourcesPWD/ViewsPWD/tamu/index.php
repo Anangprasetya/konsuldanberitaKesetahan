@@ -36,12 +36,14 @@
                         <?php if (isset($_SESSION['username'])) { ?>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <a href="edit_tamu.php?id=<?php echo $data['id_tamu']; ?>" class="btn btn-warning"> Edit
+                                    <a href="<?= BASEURL . 'tamu/edit/' . $data['id_tamu'] ?>" class="btn btn-warning"> Edit
                                         <span class="fa fa-edit" aria-hidden="true"></span>
                                     </a>
-                                    <a href="hapus_tamu.php?id=<?php echo $data['id_tamu']; ?>" class="btn btn-danger"> Hapus
-                                        <span class="fa fa-trash" aria-hidden="true"></span>
-                                    </a>
+                                    <form action="<?= BASEURL . 'tamu/hapusTamu'; ?>" method="post">
+                                        <input type="hidden" name="id" value="<?php echo $data['id_tamu']; ?>">
+                                        <button type="submit" class="btn btn-danger"> Hapus <span class="fa fa-trash" aria-hidden="true"></span></button>
+                                    </form>
+
                                 </div>
                             </td>
                         <?php } ?>

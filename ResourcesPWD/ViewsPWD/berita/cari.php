@@ -14,7 +14,9 @@
     <div class="container">
         <div class="row">
             <?php if ($data["berita"] == null) : ?>
-                <h4>Kata kunci "<?php echo  $data["key"]; ?>" tidak ditemukan </h4>
+                <div class="col-sm-4">
+                    <h4>Kata kunci "<?php echo  $data["key"]; ?>" tidak ditemukan </h4>
+                </div>
             <?php else : ?>
                 <!--==========================LOOP============ -->
                 <?php foreach ($data["berita"] as $data) : ?>
