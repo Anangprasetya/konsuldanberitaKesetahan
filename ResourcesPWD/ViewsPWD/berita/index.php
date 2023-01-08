@@ -40,7 +40,7 @@
                                     <span class="fa fa-drivers-license-o" aria-hidden="true"></span> Lihat
                                 </a>
                                 <?php if (isset($_SESSION['username'])) { ?>
-                                    <a href="edit_berita.php?id=<?php echo $data['id_berita']; ?>" class="btn btn-warning"> Edit
+                                    <a href="<?= BASEURL . 'berita/editBerita/' . $data['slug_berita']; ?>" class="btn btn-warning"> Edit
                                         <span class="fa fa-edit" aria-hidden="true"></span>
                                     </a>
                                     <form action="<?= BASEURL . 'berita/hapusBerita' ?>" method="post">

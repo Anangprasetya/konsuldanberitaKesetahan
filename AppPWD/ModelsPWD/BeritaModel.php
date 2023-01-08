@@ -91,4 +91,48 @@ class BeritaModel
 
         return false;
     }
+
+    public function edit($var)
+    {
+        print_r($var);
+        $judul = $var["judul"];
+        $isi = $var["isi"];
+        $locimage = "";
+
+
+        $statement = "SELECT * FROM $this->table where slug_berita = '" . $var['slug'] . "'";
+        $this->db->query($statement);
+        $x = $this->db->execute();
+        $y = $x->fetch_array(MYSQLI_ASSOC);
+
+        $locimage = $y["gambar_berita"];
+
+        if ($var["foto"]["error"] == 4) {
+        } else {
+            $folder = "../ResourcesPWD/assets/img/berita/";
+            $nama_file = $var['foto']['name'];
+            $ukuran_file = $var['foto']['size'];
+            $tmp_file = $var['foto']['tmp_name'];
+
+            move_uploaded_file($tmp_file, $folder . $nama_file);
+
+            if (file_exists($locimage)) {
+                unlink($locimage);
+            }
+
+            $locimage = $folder . $nama_file;
+        }
+
+
+        $statement = "UPDATE $this->table SET judul_berita = '" . $judul . "', isi_berita = '" . $isi . "', gambar_berita = '" . $locimage . "' where slug_berita= '" . $var['slug'] . "'";
+
+        $this->db->query($statement);
+        $x = $this->db->execute();
+
+        if ($x) {
+            return true;
+        }
+
+        return false;
+    }
 }

@@ -40,10 +40,10 @@ class Berita extends Controller
                     header('location:' . BASEURL . 'berita');
                 }
             } else {
-                header('location: ' . BASEURL);
+                header('location: ' . BASEURL) . 'berita';
             }
         } else {
-            header('location: ' . BASEURL);
+            header('location: ' . BASEURL . 'berita');
         }
     }
 
@@ -54,9 +54,30 @@ class Berita extends Controller
             if (isset($_POST)) {
                 $r = $this->beritaModel->delete($_POST);
             }
-            print_r($_POST);
-        } else {
-            header('location: ' . BASEURL);
         }
+        header('location: ' . BASEURL . 'berita');
+    }
+
+    public function editBerita($var)
+    {
+        $data["berita"] = $this->beritaModel->getFind($var);
+
+        $this->view('partials/head');
+        $this->view('berita/edit', $data);
+        $this->view('partials/footer');
+    }
+
+    public function prosesEditBerita()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $r = $this->beritaModel->edit(array_merge($_POST, $_FILES));
+            if ($r) {
+                header('location: ' . BASEURL . 'berita');
+            }
+            // print_r($_POST);
+            // print_r($_FILES);
+        }
+
+        header('location: ' . BASEURL . 'berita');
     }
 }
