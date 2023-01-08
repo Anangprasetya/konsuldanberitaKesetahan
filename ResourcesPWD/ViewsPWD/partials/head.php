@@ -58,6 +58,10 @@
                     </li>
                 </ul>
 
+                <button type="button" class="btn btn-secondary my-2 mx-2 my-sm-0" data-toggle="modal" data-target="#mySearch">
+                    <span class=" fa fa-search" aria-hidden="true"></span>
+                </button>
+
                 <?php if (isset($_SESSION['username'])) { ?>
                     <p class="my-2 my-sm-0 text-white">Selamat datang, <?php echo $_SESSION['username']; ?></p>
                     <p class="my-2 my-sm-0 text-black"> ..... </p>
@@ -101,6 +105,35 @@
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="modal fade" id="mySearch">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Pencarian Berita</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="<?= BASEURL . 'homecontroller/search' ?>" method="post">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label for="username">Judul</label>
+                                        <input type="text" class="form-control" id="username" placeholder="Enter keyword" name="key">
+                                    </div>
+                                </fieldset>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Cari</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                         </form>

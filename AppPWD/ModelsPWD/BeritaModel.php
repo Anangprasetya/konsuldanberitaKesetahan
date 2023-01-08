@@ -135,4 +135,21 @@ class BeritaModel
 
         return false;
     }
+
+    public function search($var)
+    {
+        $query = "SELECT * FROM $this->table WHERE judul_berita LIKE '%" . $var['key'] . "%'";
+
+        // print_r($query);
+
+        $this->db->query($query);
+        $x = $this->db->execute();
+
+        if ($x->num_rows > 0) {
+            $y = $x->fetch_all(MYSQLI_ASSOC);
+            return $y;
+        }
+
+        return null;
+    }
 }
