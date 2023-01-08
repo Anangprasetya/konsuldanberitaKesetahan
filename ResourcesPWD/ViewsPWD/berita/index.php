@@ -43,9 +43,14 @@
                                     <a href="edit_berita.php?id=<?php echo $data['id_berita']; ?>" class="btn btn-warning"> Edit
                                         <span class="fa fa-edit" aria-hidden="true"></span>
                                     </a>
-                                    <a href="hapus_berita.php?id=<?php echo $data['id_berita']; ?>" class="btn btn-danger"> Hapus
-                                        <span class="fa fa-trash" aria-hidden="true"></span>
-                                    </a>
+                                    <form action="<?= BASEURL . 'berita/hapusBerita' ?>" method="post">
+                                        <input type="hidden" name="berita" value="<?= $data['slug_berita']; ?>">
+                                        <button type="submit" class="btn btn-danger">
+                                            Hapus
+                                            <span class="fa fa-trash" aria-hidden="true"></span>
+                                        </button>
+                                    </form>
+
                                 <?php } ?>
                             </div>
                         </td>
@@ -73,7 +78,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="aksi_tambah_berita.php" method="post" enctype="multipart/form-data">
+                <form action="<?= BASEURL . 'berita/tambahBerita'; ?>" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <div class="form-group">
                             <label for="username">Judul Berita</label>
