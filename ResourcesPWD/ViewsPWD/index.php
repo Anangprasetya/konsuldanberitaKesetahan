@@ -2,7 +2,7 @@
     <div class="container">
         <div class="space">
             <div class="jumbotron">
-                <h1 class="display-3">Sistem Informasi Dinas Kesehatan Kota Mataram</h1>
+                <h1 class="display-3">Sistem Informasi Dinas Kesehatan Kota Yogyakarta</h1>
                 <p class="lead">Kami Melayani masyarakat dengan sepenuh hati.</p>
                 <hr class="my-4">
 

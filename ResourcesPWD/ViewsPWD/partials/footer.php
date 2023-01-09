@@ -1,11 +1,11 @@
-<!-- <footer>
-    <div class="footer-copyright">
+<footer>
+    <div class="footer-copyright mt-3">
         <div class="container">
-            © 2015 Copyright: <a href="https://google.com"> Agam Pratama </a>
+            © 2023 Copyright: <a href="https://github.com/Anangprasetya"> Anang Nur Prasetya </a>
         </div>
     </div>
 
-</footer> -->
+</footer>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

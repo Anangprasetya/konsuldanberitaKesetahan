@@ -48,4 +48,30 @@ class Admin extends Controller
         }
         header('location: ' . BASEURL . 'admin');
     }
+
+
+    public function edit($var)
+    {
+        $r = $this->adminModel->getFind($var);
+        if ($r == null) {
+            header('location: ' . BASEURL . 'admin');
+        } else {
+            $data["admin"] = $r;
+            $this->view('partials/head');
+            $this->view('admin/edit', $data);
+            $this->view('partials/footer');
+        }
+    }
+
+    public function editAdmin()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $r = $this->adminModel->edit(array_merge($_POST, $_FILES));
+            if ($r) {
+                header('location: ' . BASEURL . 'admin');
+            }
+        }
+
+        header('location: ' . BASEURL . 'admin');
+    }
 }

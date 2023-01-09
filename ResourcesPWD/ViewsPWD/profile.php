@@ -13,7 +13,7 @@
                 <img style="height: 400px; width: 100%; display: block;" src="<?= static_file; ?>img/header.jpg" alt="Card image">
             </div>
             <div class="col-md-6">
-                <h2>DINAS KESEHATAN KOTA MATARAM</h2>
+                <h2>DINAS KESEHATAN KOTA YOGYAKARTA</h2>
                 <p>sambutan kepala dinas \
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

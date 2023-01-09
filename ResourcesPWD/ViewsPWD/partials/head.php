@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Sistem Informasi Dinas Kesehatan</title>
+    <title>Sistem Kesehatan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?= static_file; ?>css/bootstrap.min.css">
     <style>
@@ -28,7 +28,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <?php } ?>
 
-            <a class="navbar-brand" href="<?= BASEURL; ?>">SIKES</a>
+            <a class="navbar-brand" href="<?= BASEURL; ?>">ANANGAPP</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -45,12 +45,6 @@
                         <a class="nav-link" href="<?= BASEURL . 'homecontroller/about'; ?>">Profil</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Layanan Publik</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Program</a>
-                    </li>
-                    <li class="nav-item active">
                         <a class="nav-link" href="<?= BASEURL . 'tamu'; ?>">Buku Tamu</a>
                     </li>
                     <li class="nav-item active">
@@ -58,14 +52,15 @@
                     </li>
                 </ul>
 
-                <button type="button" class="btn btn-secondary my-2 mx-2 my-sm-0" data-toggle="modal" data-target="#mySearch">
-                    <span class=" fa fa-search" aria-hidden="true"></span>
-                </button>
+
 
                 <?php if (isset($_SESSION['username'])) { ?>
                     <p class="my-2 my-sm-0 text-white">Selamat datang, <?php echo $_SESSION['username']; ?></p>
                     <p class="my-2 my-sm-0 text-black"> ..... </p>
 
+                    <button type="button" class="btn btn-secondary my-2 mx-2 my-sm-0" data-toggle="modal" data-target="#mySearch">
+                        <span class=" fa fa-search" aria-hidden="true"></span>
+                    </button>
 
                     <form action="<?= BASEURL . 'auth/proses_logout'; ?>" method="post">
                         <button type="submit" class="btn btn-secondary my-2 my-sm-0">
@@ -73,6 +68,9 @@
                         </button>
                     </form>
                 <?php } else { ?>
+                    <button type="button" class="btn btn-secondary my-2 mx-2 my-sm-0" data-toggle="modal" data-target="#mySearch">
+                        <span class=" fa fa-search" aria-hidden="true"></span>
+                    </button>
                     <button type="button" class="btn btn-secondary my-2 my-sm-0" data-toggle="modal" data-target="#myModal">Login</button>
                 <?php } ?>
 

@@ -40,7 +40,7 @@
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
 
-                                    <a href="edit_admin.php?id=<?php echo $data['id_admin']; ?>" class="btn btn-warning"> Edit
+                                    <a href="<?php echo BASEURL . 'admin/edit/' . $data['id_admin']; ?>" class="btn btn-warning"> Edit
                                         <span class="fa fa-edit" aria-hidden="true"></span>
                                     </a>
                                     <form action="<?= BASEURL . 'admin/hapusAdmin'; ?>" method="post">
