@@ -4,6 +4,7 @@
 class Tamu extends Controller
 {
     private $tamuModel;
+    private $mypdf;
 
     public function __construct()
     {
@@ -79,5 +80,40 @@ class Tamu extends Controller
         }
 
         header('location: ' . BASEURL . 'tamu');
+    }
+
+    public function exportTamu()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $this->mypdf = new FPDF('l', 'mm', 'A5');
+
+            // membuat halaman baru
+            $this->mypdf->AddPage();
+            // setting jenis font yang akan digunakan
+            $this->mypdf->SetFont('Arial', 'B', 16);
+            // mencetak string
+            $this->mypdf->Cell(190, 7, 'PROGRAM STUDI TEKNIK INFORMATIKA', 0, 1, 'C');
+            $this->mypdf->SetFont('Arial', 'B', 12);
+            $this->mypdf->Cell(190, 7, 'DAFTAR BUKU KEDATANGAN TAMU', 0, 1, 'C');
+            // Memberikan space kebawah agar tidak terlalu rapat
+            $this->mypdf->Cell(10, 7, '', 0, 1);
+            $this->mypdf->SetFont('Arial', 'B', 10);
+
+            $this->mypdf->Cell(33, 6, 'NAMA', 1, 0);
+            $this->mypdf->Cell(50, 6, 'ALAMAT', 1, 0);
+            $this->mypdf->Cell(50, 6, 'TANGGAL DAFTAR', 1, 1);
+
+            $data = $this->tamuModel->getAll();
+
+            foreach ($data as $row) {
+                $this->mypdf->Cell(33, 6, $row['nama_tamu'], 1, 0);
+                $this->mypdf->Cell(50, 6, $row['alamat_tamu'], 1, 0);
+                $this->mypdf->Cell(50, 6, $row['tanggal_tamu'], 1, 1);
+            }
+
+            $this->mypdf->Output();
+        } else {
+            header('location: ' . BASEURL . 'tamu');
+        }
     }
 }

@@ -94,9 +94,9 @@ class BeritaModel
 
     public function edit($var)
     {
-        print_r($var);
         $judul = $var["judul"];
         $isi = $var["isi"];
+        $slug = $this->db->textToSlug($judul);
         $locimage = "";
 
 
@@ -104,6 +104,8 @@ class BeritaModel
         $this->db->query($statement);
         $x = $this->db->execute();
         $y = $x->fetch_array(MYSQLI_ASSOC);
+
+        $id = $y["id_berita"];
 
         $locimage = $y["gambar_berita"];
 
@@ -124,7 +126,7 @@ class BeritaModel
         }
 
 
-        $statement = "UPDATE $this->table SET judul_berita = '" . $judul . "', isi_berita = '" . $isi . "', gambar_berita = '" . $locimage . "' where slug_berita= '" . $var['slug'] . "'";
+        $statement = "UPDATE $this->table SET judul_berita = '" . $judul . "', isi_berita = '" . $isi . "', gambar_berita = '" . $locimage . "', slug_berita='$slug' WHERE id_berita= '" . $id . "'";
 
         $this->db->query($statement);
         $x = $this->db->execute();

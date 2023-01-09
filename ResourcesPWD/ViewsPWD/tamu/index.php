@@ -60,6 +60,12 @@
     <div class="container">
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambahPengunjung">Tambah Pengunjung</button>
     </div>
+<?php } else { ?>
+    <div class="container">
+        <form action="<?= BASEURL . 'tamu/exportTamu'; ?>" method="post">
+            <button type="submit" class="btn btn-success">Export</button>
+        </form>
+    </div>
 <?php } ?>
 
 
