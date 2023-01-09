@@ -43,3 +43,10 @@ class Database
         return $text;
     }
 }
+
+
+
+
+// ======================
+// Created by Anang Nur Prasetya
+// ======================

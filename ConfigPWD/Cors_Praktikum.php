@@ -23,7 +23,7 @@ define('BASEURL', $url_hostapp . 'public/');
 
 /*
 	HOST, USER, PASS, NAME
-	Disesuaikan dengan database kalian masing masing
+	Disesuaikan dengan database yang ada
 
 	contoh :
 	define('DB_HOST', 'localhost');
@@ -33,9 +33,9 @@ define('BASEURL', $url_hostapp . 'public/');
 
 */
 define('DB_HOST', 'localhost');
-define('DB_USER', 'admin');
-define('DB_PASS', 'password');
-define('DB_NAME', 'pwdrescpba_Latihan-Website-Pure-PHP');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'pwdResponsi047');
 
 
 
@@ -58,3 +58,11 @@ define('Controller', 'HomeController');
 // DEFAULT METHOD
 // ======================
 define('Method', 'index');
+
+
+
+
+
+// ======================
+// Created by Anang Nur Prasetya
+// ======================
