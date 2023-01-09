@@ -43,9 +43,13 @@
                                     <a href="edit_admin.php?id=<?php echo $data['id_admin']; ?>" class="btn btn-warning"> Edit
                                         <span class="fa fa-edit" aria-hidden="true"></span>
                                     </a>
-                                    <a href="hapus_admin.php?id=<?php echo $data['id_admin']; ?>" class="btn btn-danger"> Hapus
-                                        <span class="fa fa-trash" aria-hidden="true"></span>
-                                    </a>
+                                    <form action="<?= BASEURL . 'admin/hapusAdmin'; ?>" method="post">
+                                        <input type="hidden" name="id" value="<?php echo $data['id_admin']; ?>">
+                                        <button type="submit" class="btn btn-danger">
+                                            Hapus
+                                            <span class="fa fa-trash" aria-hidden="true"></span>
+                                        </button>
+                                    </form>
                                 </div>
                             </td>
                         <?php } ?>
@@ -75,7 +79,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="aksi_tambah_admin.php" method="post" enctype="multipart/form-data">
+                <form action="<?= BASEURL . 'admin/tambahAdmin'; ?>" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <div class="form-group">
                             <label for="username">Nama</label>

@@ -19,7 +19,7 @@ $data = $data["tamu"];
             </fieldset>
             <input type="hidden" value="<?php echo $data['id_tamu']; ?>" name="id">
             <button type="submit" class="btn btn-primary">Edit</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a href="<?= BASEURL . 'tamu'; ?>" class="btn btn-secondary">Close</a>
 
         </form>
     </div>
